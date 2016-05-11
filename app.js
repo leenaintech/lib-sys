@@ -1,4 +1,6 @@
-//old comment
+
+// new file
+
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -10,11 +12,11 @@ var app = express();
 var port = process.env.PORT || 5000;
 
 var nav = [{
-            Link: '/Books',
-            Text: 'Books'
+    Link: '/Books',
+    Text: 'Books'
         }, {
-            Link: '/Authors',
-            Text: 'Authors'
+    Link: '/Authors',
+    Text: 'Authors'
         }];
 
 var bookRouter = require('./src/routes/bookRoutes')(nav);
@@ -26,7 +28,9 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(expressSession({secret:'library'}));
+app.use(expressSession({
+    secret: 'library'
+}));
 require('./src/config/passport')(app);
 
 // app.use(express.static('src/views'));
@@ -65,4 +69,3 @@ app.get('/', function (req, res) {
 app.listen(port, function (err) {
     console.log('running on port    ' + port);
 });
-
