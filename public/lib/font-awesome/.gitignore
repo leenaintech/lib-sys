@@ -14,8 +14,6 @@ _gh_pages/*
 .svn/*
 src/website/static/*
 src/website/media/*
-public/*
-public
 bin
 cfcache
 develop-eggs
